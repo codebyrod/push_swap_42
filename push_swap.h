@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 00:01:54 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/19 01:20:43 by rosousa-         ###   ########.fr       */
+/*   Updated: 2025/12/19 03:33:36 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,5 @@ typedef struct s_list
 	int content;
 	struct s_list *next;
 } t_list;
-
-
-
 
 #endif
