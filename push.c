@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 00:01:25 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/20 21:42:47 by rosousa-         ###   ########.fr       */
+/*   Updated: 2025/12/20 23:12:03 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void push_b(t_list **head_a, t_list **head_b)
 	node_first_a->next = *head_b;
 	*head_b = node_first_a;
 
-	ft_putendl("pb", 1); //colocar essa função ou colocar minha printf;
+	// ft_putendl("pb", 1); //colocar essa função ou colocar minha printf;
 }
 
 void	push_a(t_list **head_a, t_list **head_b)

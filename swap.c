@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 21:42:57 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/20 23:04:53 by rosousa-         ###   ########.fr       */
+/*   Updated: 2025/12/21 00:14:46 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,10 @@ void	swap_b(t_list **head_b)
 	(*head_b)->next = (*head_b)->next->next;
 	temp->next = *head_b;
 	head_b = temp;
+}
+
+void	swap_s(t_list **head_a, t_list **head_b)
+{
+	swap_a(head_a);
+	swap_b(head_b);
 }
