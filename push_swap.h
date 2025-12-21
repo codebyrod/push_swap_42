@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 00:01:54 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/21 03:50:47 by rosousa-         ###   ########.fr       */
+/*   Updated: 2025/12/21 03:59:43 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	case_two(head_a, head_b);
 // INDEX
 // t_list	*index(void *ptr, t_list **head_a);
 t_list	*put_content(int *ptr, t_list **head_a);
-t_list	*new_node(int content);
 
 t_list	*new_node(int content);
 void	*add_node_back(t_list **head_a, t_list *node);
