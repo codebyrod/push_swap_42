@@ -6,18 +6,24 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 01:33:32 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/19 02:03:14 by rosousa-         ###   ########.fr       */
+/*   Updated: 2025/12/21 03:08:22 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main ()
+int main()
 {
-	t_list *head_a;
-	t_list *head_b;
+	int lista2[2] = {72, 55};
+	int lista3[3] = {91, 3, 25};
+	int lista5[5] = {17, 3, 68, 90, 2};
 
-	head_a = NULL;
-	head_b = NULL;
+	t_list *list_ord;
+	t_list *list;
 
+	list_ord = index(lista2, list);
+
+	
+
+	
 }
