@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 02:33:26 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/23 22:23:21 by rosousa-         ###   ########.fr       */
+/*   Updated: 2025/12/24 03:45:56 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	put_content(int len_array, int *ptr, t_list **head_a)
 	}
 }
 
-void	index(t_list **head_a)
+void	index_node(t_list **head_a)
 {
 	int		i;
 	t_list	*current;
@@ -67,10 +67,8 @@ void	index(t_list **head_a)
 
 	if (!*head_a)
 		return;
-	
 	current = *head_a;
 	other = *head_a;
-	
 	i = 0;
 	while (current)
 	{

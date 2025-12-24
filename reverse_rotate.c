@@ -6,13 +6,13 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 00:17:15 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/21 02:13:53 by rosousa-         ###   ########.fr       */
+/*   Updated: 2025/12/24 02:56:14 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate_reverse_a(t_list **head_a)
+void	reverse_rotate_a(t_list **head_a)
 {
 	t_list *current;
 	t_list *penul;
