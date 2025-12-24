@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 01:33:32 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/21 03:59:46 by rosousa-         ###   ########.fr       */
+/*   Updated: 2025/12/23 21:14:39 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,5 @@ int main()
 	t_list *list_ord;
 	t_list *list;
 
-	list_ord = index(lista2, list);
-
-	
-
-	
+	list = put_content(arg_l5, lista5, list);
 }

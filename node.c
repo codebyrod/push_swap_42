@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 02:33:26 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/21 03:59:40 by rosousa-         ###   ########.fr       */
+/*   Updated: 2025/12/23 22:23:21 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,36 +43,46 @@ void	*add_node_back(t_list **head_a, t_list *node)
 	return (*head_a);
 }
 
-// t_list	*put_content(int *ptr, t_list **head_a)
-// {
-
-// }
-
-int	*index(int *ptr, int size)
+void	put_content(int len_array, int *ptr, t_list **head_a)
 {
+	t_list *node;
+	if(!ptr)
+		return;
+
 	int i;
-	int j;
-	int x;
-
-	if (ptr[i] > ptr [j])
+	i = 0; 
+	while (i < len_array)
 	{
-		x++;
+		node = new_node(ptr[i]);
+		add_node_back(head_a, node);
+		i++;
 	}
-	j++;
+}
 
+void	index(t_list **head_a)
+{
+	int		i;
+	t_list	*current;
+	t_list	*other;
 
-
-	while (i < size)
-	{
-		while (ptr[i] < ptr[size])
-	}
+	if (!*head_a)
+		return;
+	
 	current = *head_a;
-
-	while (current->next)
+	other = *head_a;
+	
+	i = 0;
+	while (current)
 	{
-		
-		current->id = [i];
+		while (other)
+		{
+			if(current->content > other->content)
+				i++;
+			other = other->next;
+		}
+		other = *head_a;
+		current->id = i;
+		i = 0;
 		current = current->next;
 	}
-
 }
