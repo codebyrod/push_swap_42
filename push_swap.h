@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 00:01:54 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/24 14:17:35 by rosousa-         ###   ########.fr       */
+/*   Updated: 2025/12/29 05:49:26 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,11 @@ void	rrr(t_list **head_a, t_list **head_b);
 
 ///CASO BASE // APAGAR
 void	case_base(int len_list, t_list **head_a, t_list **head_b);
+void	case_two(t_list **head_a);
+void	case_three(t_list **head_a);
 void	case_five(t_list **head_a, t_list **head_b);
-void	case_three(t_list **head_a, t_list **head_b);
-// void	case_three_aux(t_list **head_a, t_list **head_b);
-void	case_two(t_list **head_a, t_list **head_b);
-t_list	*min_search(t_list **head_a);
+void	bring_top(t_list **head_a);
+int		dist_top(t_list **head_a);
 
 //CRIAR NÓS E COLOCAR NO FINAL
 t_list	*new_node(int content);
@@ -65,6 +65,9 @@ void	*add_node_back(t_list **head_a, t_list *node);
 // INDEX
 void	put_content(int len_array, int *ptr, t_list **head_a);
 void	index_node(t_list **head_a);
+
+// AUXILIAR LISTA
+int		ft_lstsize(t_list *lst);
 
 // FUNÇÕES DE TESTE
 void print_stacks(t_list **head_a, t_list **head_b);
