@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 23:54:21 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/29 05:49:31 by rosousa-         ###   ########.fr       */
+/*   Updated: 2025/12/31 04:04:00 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,21 @@ int main(int argc, char **argv)
 // TESTE CASE_BASE
 	int case2[] = {21, 14};
 	int case3[] = {81, 27, 9};
-	// int case5[] = {1, 2, 3, 4, 5};
-	// int case5[] = {2, 4, 1, 3, 5};
-	// int case5[] = {3, 1, 4, 2, 5};
-	// int case5[] = {4, 3, 2, 1, 5};
 	int case5[] = {3, 4, 1, 2, 5};
+	int	case_radix[] = {6, 4, 5, 2, 1, 3, 0};
 	int len_case2 = 2;
 	int len_case3 = 3;
 	int len_case5 = 5;
+	int len_case7 = 7;
 
 	printf("--- POPULANDO LISTA ---\n");
-	put_content(len_case5, case5, &stack_a);
+	put_content(len_case7, case_radix, &stack_a);
 	// put_content(len, arr2, &stack_b);
 	index_node(&stack_a);
 	print_stacks(&stack_a, &stack_b);
 	// printf("entrou no case_base\n");
-	case_base(len_case5, &stack_a, &stack_b);
+	// case_base(len_case5, &stack_a, &stack_b); //DESCOMENTAR;
+	radix_sort(&stack_a, &stack_b);
 	// printf("entrou e saiu do case_base\n");
 	print_stacks(&stack_a, &stack_b);
 	

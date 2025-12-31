@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 00:01:54 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/29 05:49:26 by rosousa-         ###   ########.fr       */
+/*   Updated: 2025/12/31 01:26:36 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,11 @@ void	case_three(t_list **head_a);
 void	case_five(t_list **head_a, t_list **head_b);
 void	bring_top(t_list **head_a);
 int		dist_top(t_list **head_a);
+
+// RADIX
+void	radix_sort(t_list **head_a, t_list **head_b);
+int		biggest_id(t_list **head_a);
+int		count_bit(int max_id);
 
 //CRIAR NÓS E COLOCAR NO FINAL
 t_list	*new_node(int content);
