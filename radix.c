@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 12:31:47 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/31 04:19:18 by rosousa-         ###   ########.fr       */
+/*   Updated: 2025/12/31 04:45:02 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,9 @@ void	radix_sort(t_list **head_a, t_list **head_b)
 		while (size_lst_a)
 		{
 			if((((*head_a)->id >> i) & 1) == 0)
-			{
 				pb(head_a, head_b);
-				print_stacks(head_a, head_b);
-			}
 			else
-			{
 				ra(head_a);
-				print_stacks(head_a, head_b);
-			}
 			size_lst_a--;
 		}
 		while (*head_b)
