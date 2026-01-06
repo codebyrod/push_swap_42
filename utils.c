@@ -1,53 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/29 04:35:29 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/31 03:50:54 by rosousa-         ###   ########.fr       */
+/*   Created: 2026/01/05 22:02:38 by rosousa-          #+#    #+#             */
+/*   Updated: 2026/01/05 22:58:49 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_lstsize(t_list *lst)
+int		ft_atol(char *str)
 {
-	int i;
+	long	i;
+	int		signal;
+	int		result;
 
-	i = 0;
-	if (!lst)
-		return (0);
-	t_list *current;
-	current = lst;
-	while (current)
+	result = 0;
+	signal = 1;
+	while (str[i])
 	{
-		current = current->next;
-		i++;
+		if(str[i] == ' ' || str[i] >= 9 || str[i] <= 13)
+			i++;
+		if(str[i] == '+' || str[i] == '-')
+		{
+			if(str[i] == '-')
+				signal = -1;
+			i++;
+		}
+		while(str[i] >= '0' && str[i] <= '9')
+		{
+			result = (result * 10) + (str[i] - '0');
+			i++;
+		}
+		return (result * signal);
 	}
-
-	return (i);
-}
-
-int	biggest_id(t_list **head_a)
-{
-	t_list	*champion;
-	t_list	*challenging;
-	t_list	*temp;
-	int		idx;
-
-	if(!head_a || !(*head_a))
-		return(0);
-	champion = *head_a;
-	challenging = *head_a;
-	temp = *head_a;
-	idx = 0;
-	while (challenging)
-	{
-		if(champion->id < challenging->id)
-			champion = challenging;
-		challenging = challenging->next;
-	}
-	return (champion->id);
 }
