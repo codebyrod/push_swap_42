@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 00:01:54 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/31 01:26:36 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/05 23:00:29 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,17 @@ void	index_node(t_list **head_a);
 
 // AUXILIAR LISTA
 int		ft_lstsize(t_list *lst);
+
+//SPLIT
+char	**ft_split(char const *str, char delimiter);
+int		word_count(char const *str, char delimiter);
+int		letter_count(char const *str, char delimiter);
+char	*put_content_split(char const *str, int len);
+void	*ft_free_all(char **str, int count);
+
+//PARSING
+int		ft_atol(char *str);
+
 
 // FUNÇÕES DE TESTE
 void print_stacks(t_list **head_a, t_list **head_b);
