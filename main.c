@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 01:33:32 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/06 01:57:50 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/06 14:29:46 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,20 @@ int main(int argc, char **argv)
 {
 	t_list *stack_a = NULL;
 	t_list *stack_b = NULL;
+	t_list *node;
+
+	node = stack_a;
+
+	long num;
 
 	int i;
 	int j;
+	int k;
+	int control_free;
 
 	i = 0;
+	k = 0;
+	control_free = 0;
 
 	char **new_str;
 	char *str;
@@ -34,11 +43,15 @@ int main(int argc, char **argv)
 			write(2, "Error\n", 6);
 			return (1);
 		}
+		control_free = 1;
 	}
 	else if (argc > 2)
 		new_str = &argv[1];
 	else
+	{
 		write(1, '\n', 1);
+		return (1);
+	}
 
 	//VERIFICA ARRAY
 	while(new_str[i])
@@ -50,20 +63,68 @@ int main(int argc, char **argv)
 			if(str[j] == '+' || str[j] == '-')
 			{
 				if(j > 0)
+				{
+					aux_error(&stack_a, new_str, control_free);
 					return (1);
+				}
 				j++;
 			}
 			if(str[j] < '0' || str[j] > '9')
+			{
+				aux_error(&stack_a, new_str, control_free);
 				return (1);
+			}
 			j++;
 		}
+		num = check_valid_num(&stack_a, new_str, i, control_free);
+		if (!num)
+			return (1);
+
+		//SETANDO NUMEROS NOS NÓS
+		node = new_node((int)num);
+		if (!node)
+		{
+			free_stack(&stack_a);
+			if (control_free)
+				free_split(new_str);
+			write(2, "Error\n", 6);
+			return (1);
+		}
+		add_node_back(&stack_a, node);
 		i++;
 	}
-
+	if(control_free)
+		free_split(new_str);
 	// put_content(len_case7, case_radix, &stack_a);
 	// index_node(&stack_a);
 	// case_base(len_case5, &stack_a, &stack_b);
 	// radix_sort(&stack_a, &stack_b);
 	
 	return (0);
+}
+
+int	check_valid_num(t_list **stack_a, char **str_str, int iter, int control)
+{
+	long	num;
+	long	num_temp;
+	int		i;
+
+	num = ft_atol(str_str[iter]);
+	if(num > 2147483647 || num < -2147483648)
+	{
+		aux_error(&stack_a, str_str, control);
+		return (NULL);
+	}
+	i = iter + 1;
+	while (str_str[i])
+	{
+		num_temp = ft_atol(str_str[i]);
+		if (num == num_temp)
+		{
+			aux_error(&stack_a, str_str, control);
+			return (NULL);
+		}
+		i++;
+	}
+	return (num);
 }

@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 02:33:26 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/24 03:45:56 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/06 02:52:16 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ t_list	*new_node(int content)
 	node->content = content;
 	node->id = -1;
 	node->next = NULL;
-
 	return (node);
 }
 
@@ -39,7 +38,6 @@ void	*add_node_back(t_list **head_a, t_list *node)
 	while (current->next)
 		current = current->next;
 	current->next = node;
-
 	return (*head_a);
 }
 

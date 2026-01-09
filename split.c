@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 14:47:24 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/05 22:01:52 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/06 11:32:36 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	**ft_split(char const *str, char delimiter)
 		number_letter = letter_count(str, delimiter);
 		new_str[i] = put_content_split(str, number_letter);
 		if(!new_str[i])
-			return (ft_free_all(new_str, i));
+			return (free_split_partial(new_str, i));
 		str = &str[number_letter];
 		i++;
 	}
@@ -71,6 +71,7 @@ int	letter_count(char const *str, char delimiter)
 	return (i);
 }
 
+//APAGAR OU UTILIZAR?
 char	*put_content_split(char const *str, int len)
 {
 	int i;
@@ -91,18 +92,4 @@ char	*put_content_split(char const *str, int len)
 	return (new_str);
 }
 
-void	*ft_free_all(char **str, int count)
-{
-	int	i;
 
-	i = 0;
-	if(!str)
-		return (NULL);
-	while(i < count)
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
-	return (NULL);
-}

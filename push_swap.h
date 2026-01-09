@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 00:01:54 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/05 23:00:29 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/06 12:13:25 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int		dist_top(t_list **head_a);
 
 // RADIX
 void	radix_sort(t_list **head_a, t_list **head_b);
-int		biggest_id(t_list **head_a);
 int		count_bit(int max_id);
 
 //CRIAR NÓS E COLOCAR NO FINAL
@@ -73,13 +72,20 @@ void	index_node(t_list **head_a);
 
 // AUXILIAR LISTA
 int		ft_lstsize(t_list *lst);
+int		biggest_id(t_list **head_a);
+
 
 //SPLIT
 char	**ft_split(char const *str, char delimiter);
 int		word_count(char const *str, char delimiter);
 int		letter_count(char const *str, char delimiter);
-char	*put_content_split(char const *str, int len);
-void	*ft_free_all(char **str, int count);
+char	*put_content_split(char const *str, int len); //APAGAR OU NÃO?
+
+//FREE
+void	*free_split_partial(char **str, int count);
+void	*free_split(char **str);
+void	free_stack(t_list **stack_a);
+void	aux_error(t_list **stack_a, char **str, int control);
 
 //PARSING
 int		ft_atol(char *str);
