@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 00:01:54 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/06 12:13:25 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/09 22:41:03 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void	aux_error(t_list **stack_a, char **str, int control);
 
 //PARSING
 int		ft_atol(char *str);
+char    **unifying_data(int argc, char *argv[], int *control);
 
 
 // FUNÇÕES DE TESTE

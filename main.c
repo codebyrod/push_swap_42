@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 01:33:32 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/06 14:29:46 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/09 22:39:00 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,15 @@ int main(int argc, char **argv)
 	int i;
 	int j;
 	int k;
-	int control_free;
+	int *control_free;
+	int bin;
+	
+	
+	bin = 0;
 
 	i = 0;
 	k = 0;
-	control_free = 0;
+	*control_free = 0;
 
 	char **new_str;
 	char *str;
@@ -43,7 +47,7 @@ int main(int argc, char **argv)
 			write(2, "Error\n", 6);
 			return (1);
 		}
-		control_free = 1;
+		*control_free = 1;
 	}
 	else if (argc > 2)
 		new_str = &argv[1];
@@ -103,7 +107,32 @@ int main(int argc, char **argv)
 	return (0);
 }
 
-int	check_valid_num(t_list **stack_a, char **str_str, int iter, int control)
+char **unifying_data(int argc, char *argv[], int *control)
+{
+	char **new_str;
+
+	if (argc == 2)
+	{
+		new_str = ft_split(argv[1], ' ');
+		if(!new_str)
+		{
+			write(2, "Error\n", 6);
+			return ((void *)0);
+		}
+		*control = 1;
+	}
+	else if (argc > 2)
+		new_str = &argv[1];
+	else
+	{
+		write(1, "\n", 1);
+		return ((void *)0);
+	}
+	return (new_str);
+}
+
+
+int	check_valid_num(t_list **stack_a, char **str_str, int iter, int *control)
 {
 	long	num;
 	long	num_temp;

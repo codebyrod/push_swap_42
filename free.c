@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 11:21:19 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/06 12:12:18 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/09 22:41:52 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,10 @@ void	*free_split(char **str)
 	return (NULL);
 }
 
-void	aux_error(t_list **stack_a, char **str, int control)
+void	aux_error(t_list **stack_a, char **str, int *control)
 {
-	free_stack(&stack_a);
-	if (control)
+	free_stack(stack_a);
+	if (*control)
 		free_split(str);
 	write(2, "Error\n", 6);
 
