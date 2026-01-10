@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 00:01:54 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/10 01:27:37 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/10 03:37:44 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,11 @@ void	aux_error(t_list **stack_a, char **str, int *control);
 //PARSING
 int     ft_atol(char *str);
 char    **unifying_data(int argc, char *argv[], int *control);
-int     number_validation(char **new_str);
+int     sintaxe_validation(char **new_str);
+int     *number_validation(char **new_str);
+int     limit_validation(int *arr_nb);
+int     dup_validation(int *arr_nb);
+
 
 
 // FUNÇÕES DE TESTE
