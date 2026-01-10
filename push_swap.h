@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 00:01:54 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/09 22:41:03 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/10 01:27:37 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,12 @@ char	*put_content_split(char const *str, int len); //APAGAR OU NÃO?
 void	*free_split_partial(char **str, int count);
 void	*free_split(char **str);
 void	free_stack(t_list **stack_a);
-void	aux_error(t_list **stack_a, char **str, int control);
+void	aux_error(t_list **stack_a, char **str, int *control);
 
 //PARSING
-int		ft_atol(char *str);
+int     ft_atol(char *str);
 char    **unifying_data(int argc, char *argv[], int *control);
+int     number_validation(char **new_str);
 
 
 // FUNÇÕES DE TESTE

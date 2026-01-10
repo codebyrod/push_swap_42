@@ -6,11 +6,12 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 01:33:32 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/10 00:43:17 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/10 02:13:46 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 int main(int argc, char **argv)
 {
@@ -91,28 +92,26 @@ int main(int argc, char **argv)
 	return (0);
 }
 
-
-int signal_validation(char **new_str)
+int number_validation(char **new_str)
 {
 	int i;
 	int j;
 	
 	i = 0;
-	j = 0;
 	while(new_str[i])
 	{
+		j = 0;
 		while (new_str[i][j])
 		{
 			if (new_str[i][j] == '-' || new_str[i][j] == '+')
 			{
 				if (j != 0)
-				{
-					if(new_str[i][j - 1] != ' ')
-						return (1); // 1 == ERRO;
-				}
+					return (1);
 				if (new_str[i][j + 1] < '0' || new_str[i][j + 1] > '9')
-					return (1); // ERRO;
+					return (1);
 			}
+			else if (new_str[i][j] < '0' || new_str[i][j] > '9')
+				return (1);
 			j++;
 		}
 		i++;
@@ -145,28 +144,28 @@ char **unifying_data(int argc, char *argv[], int *control)
 }
 
 
-int	check_valid_num(t_list **stack_a, char **str_str, int iter, int *control)
-{
-	long	num;
-	long	num_temp;
-	int		i;
+// int	check_valid_num(t_list **stack_a, char **str_str, int iter, int *control)
+// {
+// 	long	num;
+// 	long	num_temp;
+// 	int		i;
 
-	num = ft_atol(str_str[iter]);
-	if(num > 2147483647 || num < -2147483648)
-	{
-		aux_error(&stack_a, str_str, control);
-		return (NULL);
-	}
-	i = iter + 1;
-	while (str_str[i])
-	{
-		num_temp = ft_atol(str_str[i]);
-		if (num == num_temp)
-		{
-			aux_error(&stack_a, str_str, control);
-			return (NULL);
-		}
-		i++;
-	}
-	return (num);
-}
+// 	num = ft_atol(str_str[iter]);
+// 	if(num > 2147483647 || num < -2147483648)
+// 	{
+// 		aux_error(&stack_a, str_str, control);
+// 		return (NULL);
+// 	}
+// 	i = iter + 1;
+// 	while (str_str[i])
+// 	{
+// 		num_temp = ft_atol(str_str[i]);
+// 		if (num == num_temp)
+// 		{
+// 			aux_error(&stack_a, str_str, control);
+// 			return (NULL);
+// 		}
+// 		i++;
+// 	}
+// 	return (num);
+// }
