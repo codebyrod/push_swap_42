@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 12:31:47 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 02:35:25 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 02:37:38 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	chunk(int size_chunck, t_list **head_a, t_list **head_b)
 	chunk = 20;
 	while (chunk <= size_chunck)
 	{
-		iter = ft_lstsize(head_a);
+		iter = ft_lstsize(*head_a);
 		while(iter)
 		{
 			if ((*head_a)->id < chunk)
