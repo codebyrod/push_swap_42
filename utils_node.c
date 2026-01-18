@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 04:35:29 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 03:15:50 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 03:55:58 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	biggest_id(t_list **head)
 	return (champion->id);
 }
 
-int	biggest_id_position(t_list **head)
+int	position_biggest_id(t_list **head)
 {
 	t_list	*champion;
 	t_list	*challenging;

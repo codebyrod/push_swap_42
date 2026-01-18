@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 00:01:54 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 00:23:26 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 04:35:20 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,12 @@ int		dist_top(t_list **head_a);
 void	radix_sort(t_list **head_a, t_list **head_b);
 int		count_bit(int max_id);
 
+//Chunk
+void	sort_stacks(int size_chunck, t_list **head_a, t_list **head_b);
+void	chunk(int size_chunck, t_list **head_a, t_list **head_b);
+void    big_to_top_b(t_list **head_b);
+void	send_to_a(t_list **head_a, t_list **head_b);
+
 //CRIAR NÓS E COLOCAR NO FINAL
 t_list	*new_node(int content);
 void	*add_node_back(t_list **head_a, t_list *node);
@@ -73,6 +79,7 @@ void	index_node(t_list **head_a);
 // AUXILIAR LISTA
 int		ft_lstsize(t_list *lst);
 int		biggest_id(t_list **head_a);
+int		position_biggest_id(t_list **head);
 
 //SPLIT
 char	**ft_split(char const *str, char delimiter);

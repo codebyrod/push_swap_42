@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 03:32:30 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 01:26:14 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 04:36:04 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	put_content(len_str, (int *)arr_nb, &stack_a);
 	index_node(&stack_a);
 	case_base(len_str, &stack_a, &stack_b);
-	radix_sort(&stack_a, &stack_b);
+	sort_stacks(len_str, &stack_a, &stack_b);
 	return (0);
 }
 
