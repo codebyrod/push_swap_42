@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 11:21:19 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 00:16:08 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 05:06:31 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,12 @@ void	*free_split(char **str)
 	return (NULL);
 }
 
-void	free_all(t_list **stack_a, char **str, int *control)
+void	final_free(char **strstr, int *control, long* arr_nb, t_list **stack_a)
 {
-	free_stack(stack_a);
 	if (*control)
-		free_split(str);
-	write(2, "Error\n", 6);
-	exit(1);
+		free_split(strstr);
+	free(arr_nb);
+	free_stack(stack_a);
 }
 
 

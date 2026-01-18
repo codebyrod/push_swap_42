@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 03:32:57 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 00:28:44 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 04:50:39 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ long *set_arr_nb(char **strstr)
 			exit_arr_partial(strstr, arr_nb);
 		i++;
 	}
+	limit_validation(strstr, arr_nb);
+	check_dup(strstr, arr_nb);
 	return (arr_nb);
 }
 

@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 00:01:54 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 04:35:20 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 05:09:31 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,6 @@ void	case_five(t_list **head_a, t_list **head_b);
 void	bring_top(t_list **head_a);
 int		dist_top(t_list **head_a);
 
-// RADIX
-void	radix_sort(t_list **head_a, t_list **head_b);
-int		count_bit(int max_id);
-
 //Chunk
 void	sort_stacks(int size_chunck, t_list **head_a, t_list **head_b);
 void	chunk(int size_chunck, t_list **head_a, t_list **head_b);
@@ -91,7 +87,7 @@ char	*put_content_split(char const *str, int len); //APAGAR OU NÃO?
 void	*free_split_partial(char **str, int count);
 void	*free_split(char **str);
 void	free_stack(t_list **stack_a);
-void	free_all(t_list **stack_a, char **str, int *control);
+void    final_free(char **strstr, int *control, long *arr_nb, t_list **stack_a);
 
 // FREXIT
 void	exit_split(char **strstr);
@@ -116,6 +112,5 @@ void	fnc_teste_arr_nb(char **strstr, long *arr_nb);
 void	fnc_teste_atol(int nb);
 int		fnc_teste_limite(int lim_val);
 int 	fnc_teste_dup(int dup_val);
-
 
 #endif
