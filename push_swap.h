@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 00:01:54 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 05:09:31 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 06:45:54 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	rrb(t_list **head_b);
 void	rrr(t_list **head_a, t_list **head_b);
 
 ///CASO BASE // APAGAR
-void	case_base(int len_list, t_list **head_a, t_list **head_b);
+void	def_case(int len_list, t_list **head_a, t_list **head_b);
 void	case_two(t_list **head_a);
 void	case_three(t_list **head_a);
 void	case_five(t_list **head_a, t_list **head_b);
@@ -74,8 +74,8 @@ void	index_node(t_list **head_a);
 
 // AUXILIAR LISTA
 int		ft_lstsize(t_list *lst);
-int		biggest_id(t_list **head_a);
 int		position_biggest_id(t_list **head);
+void	is_ordered(char **strstr, int *control, int len_lst, long *arr_nb);
 
 //SPLIT
 char	**ft_split(char const *str, char delimiter);
@@ -87,11 +87,13 @@ char	*put_content_split(char const *str, int len); //APAGAR OU NÃO?
 void	*free_split_partial(char **str, int count);
 void	*free_split(char **str);
 void	free_stack(t_list **stack_a);
+
 void    final_free(char **strstr, int *control, long *arr_nb, t_list **stack_a);
 
 // FREXIT
 void	exit_split(char **strstr);
 void	exit_arr_partial(char **strstr, long *arr_nb);
+void	exit_ordered(char **strstr, int *control, long *arr_nb);
 
 //PARSING
 long	ft_atol(char *str);
@@ -103,14 +105,5 @@ void	limit_validation(char **strstr, long *arr_nb);
 void	val_dec_places(char **strstr, long *arr_nb, int iter);
 int     count_dec_places(char *str);
 void	check_dup(char **strstr, long *arr_nb);
-
-
-//FUNÇÕES DE TESTE
-void	fnc_teste_unicacao(char **new_str, int *control);
-void	fnc_teste_syntax(int nb_val);
-void	fnc_teste_arr_nb(char **strstr, long *arr_nb);
-void	fnc_teste_atol(int nb);
-int		fnc_teste_limite(int lim_val);
-int 	fnc_teste_dup(int dup_val);
 
 #endif

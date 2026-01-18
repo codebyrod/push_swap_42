@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 02:33:26 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/06 02:52:16 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 05:28:56 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ t_list	*new_node(int content)
 {
 	t_list *node;
 
-	node = calloc(1, sizeof(t_list)); // MUDAR PARA MINHA CALLOC
+	// node = calloc(1, sizeof(t_list)); // MUDAR PARA MINHA CALLOC
+	node = malloc(1 * sizeof(t_list)); // MUDAR PARA MINHA CALLOC
 	if (!node)
 		return (0);
 	node->content = content;

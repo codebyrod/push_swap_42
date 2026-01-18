@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 04:35:29 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 03:55:58 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 06:41:24 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,6 @@ int		ft_lstsize(t_list *lst)
 		i++;
 	}
 	return (i);
-}
-
-int	biggest_id(t_list **head)
-{
-	t_list	*champion;
-	t_list	*challenging;
-
-	if(!head || !(*head))
-		return(0); //E ESSE RETURN?
-	champion = *head;
-	challenging = *head;
-	while (challenging)
-	{
-		if(champion->id < challenging->id)
-			champion = challenging;
-		challenging = challenging->next;
-	}
-	return (champion->id);
 }
 
 int	position_biggest_id(t_list **head)
@@ -72,5 +54,6 @@ int	position_biggest_id(t_list **head)
 	}
 	return (idx_champion);
 }
+
 
 

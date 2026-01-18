@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   case_base.c                                        :+:      :+:    :+:   */
+/*   case.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 02:24:31 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/29 05:49:29 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 06:10:26 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	case_base(int len_list, t_list **head_a, t_list **head_b)
+void	def_case(int len_lst, t_list **head_a, t_list **head_b)
 {
-	if (len_list <= 5 && len_list > 3)
+	if (len_lst > 5)
+		sort_stacks(len_lst, head_a, head_b);
+	else if (len_lst <= 5 && len_lst > 3)
 		case_five(head_a, head_b);
-	else if (len_list == 3)
+	else if (len_lst == 3)
 		case_three(head_a);
-	else if (len_list == 2)
+	else if (len_lst == 2)
 		case_two(head_a);
 }
 
