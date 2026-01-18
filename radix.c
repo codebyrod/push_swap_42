@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 12:31:47 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 02:37:38 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 03:00:00 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,17 @@ void	chunk(int size_chunck, t_list **head_a, t_list **head_b)
 		}
 		chunk += 20;
 	}
+}
+
+void    b_to_a(t_list **head_a, t_list **head_b)
+{
+	//indentificar onde está o maior
+	//ter o tamanho da lista
+	//lista divido por 2
+	//se o maior estiver dentro da lista / 2 está na parte de cima
+	// se não tá na parte debaixo
+	
+	
 }
 
 

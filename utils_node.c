@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 04:35:29 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/06 11:25:08 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 03:15:50 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,15 @@ int		ft_lstsize(t_list *lst)
 	return (i);
 }
 
-int	biggest_id(t_list **head_a)
+int	biggest_id(t_list **head)
 {
 	t_list	*champion;
 	t_list	*challenging;
-	t_list	*temp;
-	int		idx;
 
-	if(!head_a || !(*head_a))
-		return(0);
-	champion = *head_a;
-	challenging = *head_a;
-	temp = *head_a;
-	idx = 0;
+	if(!head || !(*head))
+		return(0); //E ESSE RETURN?
+	champion = *head;
+	challenging = *head;
 	while (challenging)
 	{
 		if(champion->id < challenging->id)
@@ -49,6 +45,32 @@ int	biggest_id(t_list **head_a)
 		challenging = challenging->next;
 	}
 	return (champion->id);
+}
+
+int	biggest_id_position(t_list **head)
+{
+	t_list	*champion;
+	t_list	*challenging;
+	int     idx_champion;
+	int     idx_challenging;
+
+	idx_champion = 0;
+	idx_challenging = 1;
+	if(!head || !(*head))
+		return(-1);
+	champion = *head;
+	challenging = (*head)->next;
+	while (challenging)
+	{
+		if(champion->id < challenging->id)
+		{
+			idx_champion = idx_challenging;
+			champion = challenging;
+		}
+		challenging = challenging->next;
+		idx_challenging++;
+	}
+	return (idx_champion);
 }
 
 
