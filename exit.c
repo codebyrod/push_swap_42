@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 03:47:17 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 06:52:03 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 15:53:20 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,19 @@ void exit_split(char **strstr)
 	exit (1);
 }
 
-void	exit_arr_partial(char **strstr, long *arr_nb)
+void	exit_arr_partial(char **strstr, int *control, long *arr_nb)
 {
 	free(arr_nb);
-	exit_split(strstr);
+	if (control)
+		exit_split(strstr);
+	write(1, "Error\n", 6);
+	exit (1);
 }
 
-void exit_ordered(char **strstr, int *control, long *arr_nb)
+void	exit_stack_partial(long *arr_nb, t_list **head_a)
 {
-	if (control)
-		free_split(strstr);
 	free(arr_nb);
-	write(1, "\n", 1);
+	free_stack(head_a);
+	write(1, "Error\n", 6);
 	exit (1);
 }

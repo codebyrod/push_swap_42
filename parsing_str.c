@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 23:47:33 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/17 23:47:43 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 16:12:08 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char **unifying_data(int argc, char *argv[], int *control)
 		*control = 1;
 	}
 	else if (argc > 2)
-		new_str = &argv[1];
+		new_str = argv + 1;
 	else
 	{
 		write(1, "\n", 1);

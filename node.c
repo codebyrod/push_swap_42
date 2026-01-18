@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 02:33:26 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 06:53:24 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 15:58:56 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,21 @@ void	*add_node_back(t_list **head_a, t_list *node)
 void	put_content(int len_array, int *ptr, t_list **head_a)
 {
 	t_list *node;
+	int i;
+
+	i = 0; 
 	if(!ptr)
 		return;
-
-	int i;
-	i = 0; 
 	while (i < len_array)
 	{
 		node = new_node(ptr[i]);
+		if (!node)
+		{
+			if (i == 0)
+				free(ptr);
+			else
+				exit_stack_partial((long *)ptr, head_a);
+		}
 		add_node_back(head_a, node);
 		i++;
 	}

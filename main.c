@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 03:32:30 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 06:43:28 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 16:46:35 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,18 @@ int main(int argc, char *argv[])
 	int len_str;
 	
 	nb = 0;
-	control = &nb;	
+	control = &nb;
 	new_str = unifying_data(argc, argv, control);
 	len_str = ft_strlen_arr(new_str);
 	syntax_validation(new_str);
-	arr_nb = set_arr_nb(new_str);
-	is_ordered(new_str, control, len_str, arr_nb);
+	arr_nb = set_arr_nb(new_str, control);
+	if (*control)
+		free_split(new_str);
+	is_ordered(len_str, arr_nb);
 	put_content(len_str, (int *)arr_nb, &stack_a);
 	index_node(&stack_a);
 	def_case(len_str, &stack_a, &stack_b);
-	final_free(new_str, control, arr_nb, &stack_a);
+	final_free(arr_nb, &stack_a);
 	return (0);
 }
 

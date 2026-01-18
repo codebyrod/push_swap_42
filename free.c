@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 11:21:19 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 05:06:31 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 16:24:58 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,8 @@ void	*free_split(char **str)
 	return (NULL);
 }
 
-void	final_free(char **strstr, int *control, long* arr_nb, t_list **stack_a)
+void	final_free(long* arr_nb, t_list **stack_a)
 {
-	if (*control)
-		free_split(strstr);
 	free(arr_nb);
 	free_stack(stack_a);
 }

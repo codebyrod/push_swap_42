@@ -6,13 +6,25 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 15:45:31 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 06:44:28 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 15:53:35 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 int ft_strlen_arr(char **strstr)
+{
+	int i;
+
+	i = 0;
+	if (!strstr)
+		return (0);
+	while (strstr[i])
+		i++;
+	return (i);
+}
+
+int ft_strlen(char *strstr)
 {
 	int i;
 
@@ -52,7 +64,7 @@ long	ft_atol(char *str)
 	return (result * signal);
 }
 
-void	is_ordered(char **strstr, int *control, int len_lst, long *arr_nb)
+void	is_ordered(int len_lst, long *arr_nb)
 {
 	int i;
 	
@@ -65,5 +77,7 @@ void	is_ordered(char **strstr, int *control, int len_lst, long *arr_nb)
 		i++;
 		len_lst--;
 	}
-	exit_ordered(strstr, control, arr_nb);
+	free(arr_nb);
+	write(1, "\n", 1);
+	exit (1);
 }

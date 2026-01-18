@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 00:01:54 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 06:45:54 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 16:28:26 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	index_node(t_list **head_a);
 // AUXILIAR LISTA
 int		ft_lstsize(t_list *lst);
 int		position_biggest_id(t_list **head);
-void	is_ordered(char **strstr, int *control, int len_lst, long *arr_nb);
+void	is_ordered(int len_lst, long *arr_nb);
 
 //SPLIT
 char	**ft_split(char const *str, char delimiter);
@@ -87,22 +87,22 @@ char	*put_content_split(char const *str, int len); //APAGAR OU NÃO?
 void	*free_split_partial(char **str, int count);
 void	*free_split(char **str);
 void	free_stack(t_list **stack_a);
-
-void    final_free(char **strstr, int *control, long *arr_nb, t_list **stack_a);
+void    final_free(long *arr_nb, t_list **stack_a);
 
 // FREXIT
 void	exit_split(char **strstr);
-void	exit_arr_partial(char **strstr, long *arr_nb);
-void	exit_ordered(char **strstr, int *control, long *arr_nb);
+void	exit_arr_partial(char **strstr, int *control, long *arr_nb);
+void	exit_stack_partial(long *arr_nb, t_list **head_a);
 
 //PARSING
 long	ft_atol(char *str);
 char	**unifying_data(int argc, char *argv[], int *control);
 void	syntax_validation(char **new_str);
-long	*set_arr_nb(char **str);
+long	*set_arr_nb(char **str, int *control);
 int		ft_strlen_arr(char **strstr);
-void	limit_validation(char **strstr, long *arr_nb);
-void	val_dec_places(char **strstr, long *arr_nb, int iter);
+int		ft_strlen(char *strstr);
+void	limit_validation(char **strstr, int *control, long *arr_nb);
+void	val_dec_places(char **strstr, int *control, long *arr_nb, int iter);
 int     count_dec_places(char *str);
 void	check_dup(char **strstr, long *arr_nb);
 
