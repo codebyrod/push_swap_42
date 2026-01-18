@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 12:31:47 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/31 04:45:02 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 02:12:26 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,3 +53,33 @@ int	count_bit(int max_id)
 	}
 	return (count);
 }
+
+void	chunck_100(int size_chunck, t_list **head_a, t_list **head_b)
+{
+	t_list *current;
+	int chunk;
+	int limit;
+	int iter;
+	
+	chunk = 20;
+	limit = 100;
+	iter = 100;
+	if (size_chunck == limit)
+	{
+		while (chunk <= limit)
+		{
+			while(iter)
+			{
+				if ((*head_a)->id < chunk)
+					pb(head_a, head_b);
+				else
+					ra(head_a);
+				iter--;
+			}
+			iter = limit - chunk;
+			chunk += 20;
+		}
+	}
+}
+
+

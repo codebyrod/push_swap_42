@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 00:01:54 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/10 03:37:44 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 00:23:26 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void	index_node(t_list **head_a);
 int		ft_lstsize(t_list *lst);
 int		biggest_id(t_list **head_a);
 
-
 //SPLIT
 char	**ft_split(char const *str, char delimiter);
 int		word_count(char const *str, char delimiter);
@@ -85,22 +84,31 @@ char	*put_content_split(char const *str, int len); //APAGAR OU NÃO?
 void	*free_split_partial(char **str, int count);
 void	*free_split(char **str);
 void	free_stack(t_list **stack_a);
-void	aux_error(t_list **stack_a, char **str, int *control);
+void	free_all(t_list **stack_a, char **str, int *control);
+
+// FREXIT
+void	exit_split(char **strstr);
+void	exit_arr_partial(char **strstr, long *arr_nb);
 
 //PARSING
-int     ft_atol(char *str);
-char    **unifying_data(int argc, char *argv[], int *control);
-int     sintaxe_validation(char **new_str);
-int     *number_validation(char **new_str);
-int     limit_validation(int *arr_nb);
-int     dup_validation(int *arr_nb);
+long	ft_atol(char *str);
+char	**unifying_data(int argc, char *argv[], int *control);
+void	syntax_validation(char **new_str);
+long	*set_arr_nb(char **str);
+int		ft_strlen_arr(char **strstr);
+void	limit_validation(char **strstr, long *arr_nb);
+void	val_dec_places(char **strstr, long *arr_nb, int iter);
+int     count_dec_places(char *str);
+void	check_dup(char **strstr, long *arr_nb);
 
 
-
-// FUNÇÕES DE TESTE
-void print_stacks(t_list **head_a, t_list **head_b);
-int main(int argc, char **argv);
-int	ft_strncmp(const char *str1, const char *str2, size_t n);
+//FUNÇÕES DE TESTE
+void	fnc_teste_unicacao(char **new_str, int *control);
+void	fnc_teste_syntax(int nb_val);
+void	fnc_teste_arr_nb(char **strstr, long *arr_nb);
+void	fnc_teste_atol(int nb);
+int		fnc_teste_limite(int lim_val);
+int 	fnc_teste_dup(int dup_val);
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 23:05:41 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/21 02:12:42 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 00:29:40 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	rotate_a(t_list **head_a)
 
 	if(!*head_a || !(*head_a)->next)
 		return;
-		current = *head_a;
+	current = *head_a;
 	temp = (*head_a)->next;
 	while(current->next)
 		current = current->next;

@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 14:47:24 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/06 11:32:36 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 00:47:53 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	**ft_split(char const *str, char delimiter)
 	
 	i = 0;
 	if(!str)
-		return (0);
+		exit (1);
 	number_word = word_count(str, delimiter);
 	new_str = malloc ((number_word + 1) * sizeof(char *));
 	if (!new_str)
-		return (0);
+		exit (1);
 	while (number_word > i)
 	{
 		while (*str && *str == delimiter)

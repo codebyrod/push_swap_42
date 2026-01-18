@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   aux.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/05 22:02:38 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/05 22:58:49 by rosousa-         ###   ########.fr       */
+/*   Created: 2026/01/13 15:45:31 by rosousa-          #+#    #+#             */
+/*   Updated: 2026/01/18 00:23:24 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_atol(char *str)
+int ft_strlen_arr(char **strstr)
 {
-	long	i;
-	int		signal;
-	int		result;
+	int i;
+
+	i = 0;
+	if (!strstr)
+		return (0);
+	while (strstr[i])
+		i++;
+	return (i);
+}
+
+long	ft_atol(char *str)
+{
+	int         i;
+	long		signal;
+	long		result;
 
 	result = 0;
+	i = 0;
 	signal = 1;
 	while (str[i])
 	{
-		if(str[i] == ' ' || str[i] >= 9 || str[i] <= 13)
+		while(str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 			i++;
 		if(str[i] == '+' || str[i] == '-')
 		{
@@ -35,6 +48,6 @@ int		ft_atol(char *str)
 			result = (result * 10) + (str[i] - '0');
 			i++;
 		}
-		return (result * signal);
 	}
+	return (result * signal);
 }
