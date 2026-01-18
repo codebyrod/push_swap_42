@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 14:47:24 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 00:47:53 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 06:55:57 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	**ft_split(char const *str, char delimiter)
 	int		number_word;
 	int		number_letter;
 	int		i;
-	
+
 	i = 0;
 	if(!str)
 		exit (1);
@@ -71,7 +71,6 @@ int	letter_count(char const *str, char delimiter)
 	return (i);
 }
 
-//APAGAR OU UTILIZAR?
 char	*put_content_split(char const *str, int len)
 {
 	int i;
