@@ -6,7 +6,7 @@
 #    By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/18 05:24:57 by rosousa-          #+#    #+#              #
-#    Updated: 2026/01/18 06:52:33 by rosousa-         ###   ########.fr        #
+#    Updated: 2026/01/18 16:58:43 by rosousa-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME = push_swap
 
 SRC = \
 	case_base_five.c \
-	case_base.c \
+	case.c \
 	chunk.c \
 	exit.c \
 	free.c \

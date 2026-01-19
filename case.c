@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 02:24:31 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 06:10:26 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 19:45:14 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 void	def_case(int len_lst, t_list **head_a, t_list **head_b)
 {
 	if (len_lst > 5)
-		sort_stacks(len_lst, head_a, head_b);
+		// sort_stacks(len_lst, head_a, head_b);
+		radix_sort(head_a, head_b);
 	else if (len_lst <= 5 && len_lst > 3)
 		case_five(head_a, head_b);
 	else if (len_lst == 3)

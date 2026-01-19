@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 23:47:33 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 16:12:08 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 23:09:09 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ char **unifying_data(int argc, char *argv[], int *control)
 
 	if (argc == 2)
 	{
+		if (argv[1][0] == '\0')
+		{
+			write(2, "Error\n", 6);
+			exit (1);
+		}
 		new_str = ft_split(argv[1], ' ');
 		if(!new_str)
 		{
@@ -29,14 +34,11 @@ char **unifying_data(int argc, char *argv[], int *control)
 	else if (argc > 2)
 		new_str = argv + 1;
 	else
-	{
-		write(1, "\n", 1);
 		exit (1);
-	}
 	return (new_str);
 }
 
-void	syntax_validation(char **new_str)
+void	syntax_validation(char **new_str, int *control)
 {
 	int i;
 	int j;
@@ -50,14 +52,21 @@ void	syntax_validation(char **new_str)
 			if (new_str[i][j] == '-' || new_str[i][j] == '+')
 			{
 				if (j != 0)
-					exit_split(new_str);
+					handle_free_split(new_str, control);
 				if (new_str[i][j + 1] < '0' || new_str[i][j + 1] > '9')
-					exit_split(new_str);
+					handle_free_split(new_str, control);
 			}
 			else if (new_str[i][j] < '0' || new_str[i][j] > '9')
-				exit_split(new_str);
+				handle_free_split(new_str, control);
 			j++;
 		}
 		i++;
 	}
+}
+void	handle_free_split(char **new_str, int *control)
+{
+	if (*control)
+		free_split(new_str);
+	write(2, "Error\n", 6);
+	exit (1);
 }

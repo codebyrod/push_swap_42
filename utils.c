@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 15:45:31 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 15:53:35 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:28:12 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,6 @@ void	is_ordered(int len_lst, long *arr_nb)
 		len_lst--;
 	}
 	free(arr_nb);
-	write(1, "\n", 1);
+	// write(1, "\n", 1);
 	exit (1);
 }

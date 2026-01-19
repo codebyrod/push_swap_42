@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 03:32:57 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 13:57:03 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/18 19:29:29 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ long *set_arr_nb(char **strstr, int *control)
 	{
 		val_dec_places(strstr, control, arr_nb, i);
 		arr_nb[i] = ft_atol(strstr[i]);
-		if(!arr_nb[i])
-			exit_arr_partial(strstr, control, arr_nb);
 		i++;
 	}
 	limit_validation(strstr, control, arr_nb);
@@ -100,9 +98,7 @@ void	check_dup(char **strstr, long *arr_nb)
 	
 	i = 0;
 	j = 1;
-	
 	len_arr = ft_strlen_arr(strstr);
-
 	while((len_arr - 1) > i)
 	{
 		if (arr_nb[i] == arr_nb[j])
