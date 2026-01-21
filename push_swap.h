@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 00:01:54 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/21 01:23:24 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/21 01:30:31 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,20 +89,5 @@ void	rrb(t_list **head_b);
 void	rrr(t_list **head_a, t_list **head_b);
 void	val_dec_places(char **strstr, int *control, long *arr_nb, int iter);
 int		word_count(char const *str, char delimiter);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #endif
