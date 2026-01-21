@@ -6,15 +6,15 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 15:45:31 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 20:28:12 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/19 02:00:00 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_strlen_arr(char **strstr)
+int	ft_strlen_arr(char **strstr)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!strstr)
@@ -24,9 +24,9 @@ int ft_strlen_arr(char **strstr)
 	return (i);
 }
 
-int ft_strlen(char *strstr)
+int	ft_strlen(char *strstr)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!strstr)
@@ -38,24 +38,24 @@ int ft_strlen(char *strstr)
 
 long	ft_atol(char *str)
 {
-	int         i;
-	long		signal;
-	long		result;
+	int		i;
+	long	signal;
+	long	result;
 
 	result = 0;
 	i = 0;
 	signal = 1;
 	while (str[i])
 	{
-		while(str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 			i++;
-		if(str[i] == '+' || str[i] == '-')
+		if (str[i] == '+' || str[i] == '-')
 		{
-			if(str[i] == '-')
+			if (str[i] == '-')
 				signal = -1;
 			i++;
 		}
-		while(str[i] >= '0' && str[i] <= '9')
+		while (str[i] >= '0' && str[i] <= '9')
 		{
 			result = (result * 10) + (str[i] - '0');
 			i++;
@@ -66,18 +66,17 @@ long	ft_atol(char *str)
 
 void	is_ordered(int len_lst, long *arr_nb)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	len_lst = len_lst - 1;
-	while(len_lst)
+	while (len_lst)
 	{
-		if(arr_nb[i] > arr_nb[i + 1])
-			return;
+		if (arr_nb[i] > arr_nb[i + 1])
+			return ;
 		i++;
 		len_lst--;
 	}
 	free(arr_nb);
-	// write(1, "\n", 1);
 	exit (1);
 }

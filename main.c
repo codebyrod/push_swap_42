@@ -6,36 +6,34 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 03:32:30 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 17:56:04 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/20 20:31:45 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	t_list *stack_a = NULL;
-	t_list *stack_b = NULL;
-	int nb;
-	int *control;
-	char **new_str;
-	long *arr_nb;
-	int len_str;
+	t_list	*stack_a;
+	t_list	*stack_b;
+	char	**new_str;
+	long	*arr_nb;
+	t_var	var;
 
-	nb = 0;
-	control = &nb;
-	new_str = unifying_data(argc, argv, control);
-	len_str = ft_strlen_arr(new_str);
-	syntax_validation(new_str, control);
-	arr_nb = set_arr_nb(new_str, control);
-	if (*control)
+	stack_a = NULL;
+	stack_b = NULL;
+	var.nb = 0;
+	var.control = &var.nb;
+	new_str = unifying_data(argc, argv, var.control);
+	var.len_str = ft_strlen_arr(new_str);
+	syntax_validation(new_str, var.control);
+	arr_nb = set_arr_nb(new_str, var.control);
+	if (*var.control)
 		free_split(new_str);
-	is_ordered(len_str, arr_nb);
-	// put_content(len_str, (int *)arr_nb, &stack_a);
-	put_content(len_str, arr_nb, &stack_a);
+	is_ordered(var.len_str, arr_nb);
+	put_content(var.len_str, arr_nb, &stack_a);
 	index_node(&stack_a);
-	def_case(len_str, &stack_a, &stack_b);
+	def_case(var.len_str, &stack_a, &stack_b);
 	final_free(arr_nb, &stack_a);
 	return (0);
 }
-

@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 00:17:15 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/24 02:56:14 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/19 01:47:32 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 void	reverse_rotate_a(t_list **head_a)
 {
-	t_list *current;
-	t_list *penul;
+	t_list	*current;
+	t_list	*penul;
 
 	if (!(*head_a) || !(*head_a)->next)
-		return; 
-
+		return ;
 	current = *head_a;
-
-	while(current->next->next)
+	while (current->next->next)
 		current = current->next;
 	penul = current;
 	current = current->next;
@@ -33,14 +31,12 @@ void	reverse_rotate_a(t_list **head_a)
 
 void	reverse_rotate_b(t_list **head_b)
 {
-	t_list *current;
-	t_list *penul;
+	t_list	*current;
+	t_list	*penul;
 
-	if(!(*head_b) || !((*head_b)->next))
-		return;
-	
+	if (!(*head_b) || !((*head_b)->next))
+		return ;
 	current = *head_b;
-
 	while (current->next->next)
 		current = current->next;
 	penul = current;

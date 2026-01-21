@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 21:42:57 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/24 02:41:59 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/19 01:54:10 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,22 @@
 
 void	swap_a(t_list **head_a)
 {
-	t_list *temp;
+	t_list	*temp;
 
-	if(!*head_a || !(*head_a)->next)
-		return;
-
+	if (!*head_a || !(*head_a)->next)
+		return ;
 	temp = (*head_a)->next;
-	(*head_a)->next = (*head_a)->next->next; 
+	(*head_a)->next = (*head_a)->next->next;
 	temp->next = *head_a;
 	*head_a = temp;
 }
 
 void	swap_b(t_list **head_b)
 {
-	t_list *temp;
+	t_list	*temp;
 
-	if(!*head_b || !(*head_b)->next)
-		return;
-
+	if (!*head_b || !(*head_b)->next)
+		return ;
 	temp = (*head_b)->next;
 	(*head_b)->next = (*head_b)->next->next;
 	temp->next = *head_b;

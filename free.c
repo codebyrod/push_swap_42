@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 11:21:19 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 16:24:58 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/20 15:55:21 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	free_stack(t_list **stack_a)
 	t_list	*current;
 	t_list	*temp_next;
 
-	if(!stack_a)
+	if (!stack_a)
 		return ;
 	current = *stack_a;
 	while (current)
@@ -34,9 +34,9 @@ void	*free_split_partial(char **str, int count)
 	int	i;
 
 	i = 0;
-	if(!str)
+	if (!str)
 		return (NULL);
-	while(i < count)
+	while (i < count)
 	{
 		free(str[i]);
 		i++;
@@ -50,9 +50,9 @@ void	*free_split(char **str)
 	int	i;
 
 	i = 0;
-	if(!str)
+	if (!str)
 		return (NULL);
-	while(str[i])
+	while (str[i])
 	{
 		free(str[i]);
 		i++;
@@ -61,13 +61,16 @@ void	*free_split(char **str)
 	return (NULL);
 }
 
-void	final_free(long* arr_nb, t_list **stack_a)
+void	final_free(long *arr_nb, t_list **stack_a)
 {
 	free(arr_nb);
 	free_stack(stack_a);
 }
 
-
-
-
-
+void	handle_free_split(char **new_str, int *control)
+{
+	if (*control)
+		free_split(new_str);
+	write(2, "Error\n", 6);
+	exit (1);
+}

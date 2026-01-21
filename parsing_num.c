@@ -6,69 +6,64 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 03:32:57 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 19:29:29 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/20 20:43:40 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long *set_arr_nb(char **strstr, int *control)
+long	*set_arr_nb(char **strstr, int *control)
 {
-	int i;
-	int len;
-	long *arr_nb;
+	int		i;
+	int		len;
+	long	*arr_nb;
 
 	i = 0;
-	if(!strstr)
-		exit_split(strstr);
+	if (!strstr)
+		handle_free_split(strstr, control);
 	len = ft_strlen_arr(strstr);
 	arr_nb = malloc(len * sizeof(long));
 	if (!arr_nb)
-		exit_split(strstr);
-	while(len > i)
+		handle_free_split(strstr, control);
+	while (len > i)
 	{
 		val_dec_places(strstr, control, arr_nb, i);
 		arr_nb[i] = ft_atol(strstr[i]);
 		i++;
 	}
 	limit_validation(strstr, control, arr_nb);
-	check_dup(strstr, arr_nb);
+	check_dup(strstr, control, arr_nb);
 	return (arr_nb);
 }
 
 void	val_dec_places(char **strstr, int *control, long *arr_nb, int iter)
 {
-	int dec_places;
-	
+	int	dec_places;
+
 	dec_places = count_dec_places(strstr[iter]);
 	if (dec_places > 11)
-	{
-		if(!arr_nb[0])
-			exit_split(strstr);
-		else
-			exit_arr_partial(strstr, control, arr_nb);
-	}
+		exit_arr_partial(strstr, control, arr_nb);
 }
 
-int count_dec_places(char *str)
+int	count_dec_places(char *str)
 {
-	int i;
-	int count;
-	
+	int	i;
+	int	count;
+
 	i = 0;
 	count = 0;
-	while(str[i])
+	while (str[i])
 	{
-		while(str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 			i++;
-		if(str[i] == '+' || str[i] == '-')
+		if (str[i] == '+' || str[i] == '-')
 		{
 			i++;
 			count++;
 		}
-		while(str[i] == '0')
+		while (str[i] == '0')
 			i++;
-		while(str[i])
+		while (str[i])
 		{
 			i++;
 			count++;
@@ -79,10 +74,10 @@ int count_dec_places(char *str)
 
 void	limit_validation(char **strstr, int *control, long *arr_nb)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
-	while(strstr[i])
+	while (strstr[i])
 	{
 		if (arr_nb[i] > 2147483647 || arr_nb[i] < -2147483648)
 			exit_arr_partial(strstr, control, arr_nb);
@@ -90,19 +85,19 @@ void	limit_validation(char **strstr, int *control, long *arr_nb)
 	}
 }
 
-void	check_dup(char **strstr, long *arr_nb)
+void	check_dup(char **strstr, int *control, long *arr_nb)
 {
-	int i;
-	int j;
-	int len_arr;
-	
+	int	i;
+	int	j;
+	int	len_arr;
+
 	i = 0;
 	j = 1;
 	len_arr = ft_strlen_arr(strstr);
-	while((len_arr - 1) > i)
+	while ((len_arr - 1) > i)
 	{
 		if (arr_nb[i] == arr_nb[j])
-			exit_split(strstr);
+			exit_arr_partial(strstr, control, arr_nb);
 		if (j == (len_arr - 1))
 		{
 			i++;
@@ -111,5 +106,3 @@ void	check_dup(char **strstr, long *arr_nb)
 		j++;
 	}
 }
-
-

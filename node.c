@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 02:33:26 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 17:55:27 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/19 01:28:53 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*new_node(int content)
 {
-	t_list *node;
+	t_list	*node;
 
 	node = malloc(1 * sizeof(t_list));
 	if (!node)
@@ -27,9 +27,9 @@ t_list	*new_node(int content)
 
 void	*add_node_back(t_list **head_a, t_list *node)
 {
-	t_list *current;
-	
-	if(!(*head_a))
+	t_list	*current;
+
+	if (!(*head_a))
 	{
 		*head_a = node;
 		return (node);
@@ -43,12 +43,12 @@ void	*add_node_back(t_list **head_a, t_list *node)
 
 void	put_content(int len_array, long *ptr, t_list **head_a)
 {
-	t_list *node;
-	int i;
+	t_list	*node;
+	int		i;
 
-	i = 0; 
-	if(!ptr)
-		return;
+	i = 0;
+	if (!ptr)
+		return ;
 	while (i < len_array)
 	{
 		node = new_node((int)ptr[i]);
@@ -71,7 +71,7 @@ void	index_node(t_list **head_a)
 	t_list	*other;
 
 	if (!*head_a)
-		return;
+		return ;
 	current = *head_a;
 	other = *head_a;
 	i = 0;
@@ -79,7 +79,7 @@ void	index_node(t_list **head_a)
 	{
 		while (other)
 		{
-			if(current->content > other->content)
+			if (current->content > other->content)
 				i++;
 			other = other->next;
 		}

@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 14:47:24 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/18 06:55:57 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/19 01:52:06 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	**ft_split(char const *str, char delimiter)
 	int		i;
 
 	i = 0;
-	if(!str)
+	if (!str)
 		exit (1);
 	number_word = word_count(str, delimiter);
 	new_str = malloc ((number_word + 1) * sizeof(char *));
@@ -32,7 +32,7 @@ char	**ft_split(char const *str, char delimiter)
 			str++;
 		number_letter = letter_count(str, delimiter);
 		new_str[i] = put_content_split(str, number_letter);
-		if(!new_str[i])
+		if (!new_str[i])
 			return (free_split_partial(new_str, i));
 		str = &str[number_letter];
 		i++;
@@ -48,11 +48,11 @@ int	word_count(char const *str, char delimiter)
 
 	i = 0;
 	count = 0;
-	if(!str)
+	if (!str)
 		return (0);
 	while (str[i])
 	{
-		if(str[i] != delimiter && (i == 0 || str[i - 1] == delimiter))
+		if (str[i] != delimiter && (i == 0 || str[i - 1] == delimiter))
 			count++;
 		i++;
 	}
@@ -64,7 +64,7 @@ int	letter_count(char const *str, char delimiter)
 	int	i;
 
 	i = 0;
-	if(!str)
+	if (!str)
 		return (0);
 	while (str[i] && str[i] != delimiter)
 		i++;
@@ -73,16 +73,16 @@ int	letter_count(char const *str, char delimiter)
 
 char	*put_content_split(char const *str, int len)
 {
-	int i;
-	char *new_str;
+	int		i;
+	char	*new_str;
 
 	i = 0;
-	if(!str)
+	if (!str)
 		return (0);
 	new_str = malloc((len + 1) * sizeof(char));
 	if (!new_str)
 		return (0);
-	while(len > i)
+	while (len > i)
 	{
 		new_str[i] = str[i];
 		i++;
@@ -90,5 +90,3 @@ char	*put_content_split(char const *str, int len)
 	new_str[i] = 0;
 	return (new_str);
 }
-
-

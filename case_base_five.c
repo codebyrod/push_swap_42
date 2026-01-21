@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 05:17:55 by rosousa-          #+#    #+#             */
-/*   Updated: 2025/12/31 13:58:14 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/19 01:12:32 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,15 @@ void	case_five(t_list **head_a, t_list **head_b)
 
 void	bring_top(t_list **head_a)
 {
-	int idx;
-	int len_lst;
-	int temp;
+	int	idx;
+	int	len_lst;
+	int	temp;
 
-	if(!(*head_a))
-		return;
+	if (!(*head_a))
+		return ;
 	len_lst = ft_lstsize(*head_a);
 	idx = dist_top(head_a);
-	if(idx <= (len_lst / 2))
+	if (idx <= (len_lst / 2))
 	{
 		while (idx)
 		{
@@ -68,15 +68,15 @@ int	dist_top(t_list **head_a)
 	t_list	*temp;
 	int		idx;
 
-	if(!head_a || !(*head_a))
-		return(0);
+	if (!head_a || !(*head_a))
+		return (0);
 	champion = *head_a;
 	challenging = *head_a;
 	temp = *head_a;
 	idx = 0;
 	while (challenging)
 	{
-		if(champion->id > challenging->id)
+		if (champion->id > challenging->id)
 			champion = challenging;
 		challenging = challenging->next;
 	}
