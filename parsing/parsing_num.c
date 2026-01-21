@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 03:32:57 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/20 20:43:40 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/21 01:21:26 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	val_dec_places(char **strstr, int *control, long *arr_nb, int iter)
 
 	dec_places = count_dec_places(strstr[iter]);
 	if (dec_places > 11)
-		exit_arr_partial(strstr, control, arr_nb);
+		exit_arrl(strstr, control, arr_nb);
 }
 
 int	count_dec_places(char *str)
@@ -80,7 +80,7 @@ void	limit_validation(char **strstr, int *control, long *arr_nb)
 	while (strstr[i])
 	{
 		if (arr_nb[i] > 2147483647 || arr_nb[i] < -2147483648)
-			exit_arr_partial(strstr, control, arr_nb);
+			exit_arrl(strstr, control, arr_nb);
 		i++;
 	}
 }
@@ -97,7 +97,7 @@ void	check_dup(char **strstr, int *control, long *arr_nb)
 	while ((len_arr - 1) > i)
 	{
 		if (arr_nb[i] == arr_nb[j])
-			exit_arr_partial(strstr, control, arr_nb);
+			exit_arrl(strstr, control, arr_nb);
 		if (j == (len_arr - 1))
 		{
 			i++;

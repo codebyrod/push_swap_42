@@ -6,32 +6,31 @@
 #    By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/18 05:24:57 by rosousa-          #+#    #+#              #
-#    Updated: 2026/01/20 15:13:15 by rosousa-         ###   ########.fr        #
+#    Updated: 2026/01/21 00:59:45 by rosousa-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CCFLAGS = -Wall -Werror -Wextra -g
-# NAME = push_swap.a
+CFLAGS = -Wall -Werror -Wextra -g -I.
 NAME = push_swap
 
 SRC = \
-	case_base_five.c \
-	case.c \
-	exit.c \
-	free.c \
+	free/exit.c \
+	free/free.c \
+	movements/push.c \
+	movements/reverse_rotate.c \
+	movements/rotate.c \
+	movements/swap.c \
+	parsing/parsing_num.c \
+	parsing/parsing_str.c \
+	sort/case_base_five.c \
+	sort/case.c \
+	sort/node.c \
+	sort/radix.c \
+	utils/split.c \
+	utils/utils_node.c \
+	utils/utils.c \
 	main.c \
-	node.c \
-	parsing_num.c \
-	parsing_str.c \
-	push.c \
-	radix.c \
-	reverse_rotate.c \
-	rotate.c \
-	split.c \
-	swap.c \
-	utils_node.c \
-	utils.c \
 
 OBJS = $(SRC:.c=.o)
 BONUS_OBJS = $(BONUS_SRC:.c=.o)
@@ -39,11 +38,10 @@ BONUS_OBJS = $(BONUS_SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-# 	ar rcs $(NAME) $(OBJS)
-	$(CC) $(CCFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.c
-	$(CC) $(CCFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
