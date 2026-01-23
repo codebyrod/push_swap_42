@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 15:45:31 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/19 02:00:00 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/23 07:26:20 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,19 +64,3 @@ long	ft_atol(char *str)
 	return (result * signal);
 }
 
-void	is_ordered(int len_lst, long *arr_nb)
-{
-	int	i;
-
-	i = 0;
-	len_lst = len_lst - 1;
-	while (len_lst)
-	{
-		if (arr_nb[i] > arr_nb[i + 1])
-			return ;
-		i++;
-		len_lst--;
-	}
-	free(arr_nb);
-	exit (1);
-}

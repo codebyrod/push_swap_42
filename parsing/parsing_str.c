@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 23:47:33 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/20 20:33:03 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/23 07:26:22 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,11 @@ void	first_str_empty(char *str)
 	int	len;
 
 	len = ft_strlen(str);
-	if (*str == '\0' || (len == 1 && *str == ' '))
+	if (len == 1 && *str == ' ')
 	{
 		write(2, "Error\n", 6);
 		exit (1);
 	}
+	if (*str == '\0')
+		exit (0);
 }

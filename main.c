@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 03:32:30 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/20 20:31:45 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/23 07:08:27 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,21 @@ int	main(int argc, char *argv[])
 	def_case(var.len_str, &stack_a, &stack_b);
 	final_free(arr_nb, &stack_a);
 	return (0);
+}
+
+void	is_ordered(int len_lst, long *arr_nb)
+{
+	int	i;
+
+	i = 0;
+	len_lst = len_lst - 1;
+	while (len_lst)
+	{
+		if (arr_nb[i] > arr_nb[i + 1])
+			return ;
+		i++;
+		len_lst--;
+	}
+	free(arr_nb);
+	exit (0);
 }
