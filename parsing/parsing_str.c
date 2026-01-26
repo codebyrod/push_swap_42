@@ -6,7 +6,7 @@
 /*   By: rosousa- <rosousa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 23:47:33 by rosousa-          #+#    #+#             */
-/*   Updated: 2026/01/23 07:26:22 by rosousa-         ###   ########.fr       */
+/*   Updated: 2026/01/26 18:57:05 by rosousa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	**unifying_data(int argc, char *argv[], int *control)
 		new_str = argv + 1;
 	}
 	else
-		exit (1);
+		exit (0);
 	return (new_str);
 }
 
@@ -74,5 +74,8 @@ void	first_str_empty(char *str)
 		exit (1);
 	}
 	if (*str == '\0')
-		exit (0);
+	{
+		write(2, "Error\n", 6);
+		exit (1);
+	}
 }
